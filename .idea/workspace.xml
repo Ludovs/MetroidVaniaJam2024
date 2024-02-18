@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="11827f4a-40f1-43d9-996b-b12493106e8f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MetroidVaniaJam2024.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MetroidVaniaJam2024/v17/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.apple-touch-icon.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.apple-touch-icon.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.icon.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.icon.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.pck" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.pck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Exports/Html/index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Resources/Darts/arrow.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Resources/Darts/arrow.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Resources/Darts/magic_dart.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Resources/Darts/magic_dart.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Resources/tile_set.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Resources/tile_set.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Autoload/game_events.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Autoload/game_events.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Autoload/hud.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Autoload/hud.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Autoload/player_stats.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Autoload/player_stats.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/collectable_spawn_point.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/collectable_spawn_point.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/dart_component.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/dart_component.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/group_detector_component.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/group_detector_component.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/health_component.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/health_component.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/movement_component.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/movement_component.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/spell_component.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/spell_component.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Components/state_machine_component.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Components/state_machine_component.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Camera/camera.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Camera/camera.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Camera/camera.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Camera/camera.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/boots_charm.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/boots_charm.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/energy_orb_charm.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/energy_orb_charm.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/vampire_charm.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/vampire_charm.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/wings_charm.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Charms/wings_charm.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Darts/dart_base.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Darts/dart_base.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Archer/archer_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Archer/archer_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Bat/bat_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Bat/bat_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Lich/lich_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Lich/lich_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Mimic/mimic_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Mimic/mimic_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Skeleton/skeleton_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Skeleton/skeleton_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/SkeletonMage/skeleton_mage_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/SkeletonMage/skeleton_mage_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Slimes/slime_enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Enemies/Slimes/slime_enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/CoinMerchant/merchant.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/CoinMerchant/merchant.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/CoinMerchant/merchant.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/CoinMerchant/merchant.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/HeartMerchant/heart_merchant.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/HeartMerchant/heart_merchant.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/HeartMerchant/heart_merchant.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Merchant/HeartMerchant/heart_merchant.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Particles/spawning_particles.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Particles/spawning_particles.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Particles/sword_destroy_particles.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Particles/sword_destroy_particles.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Teleporter/teleporter.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Teleporter/teleporter.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Vase/vase.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Vase/vase.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Vase/vase.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/Vase/vase.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/WarriorBoss/Props/falling_sword.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/WarriorBoss/Props/falling_sword.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/WarriorBoss/warrior_boss.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/WarriorBoss/warrior_boss.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/WarriorBoss/warrior_boss.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/GameObjects/WarriorBoss/warrior_boss.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/boss_fight.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/boss_fight.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/boss_fight.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/boss_fight.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/dungeon.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/dungeon.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/dungeon.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/dungeon.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/intro.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/intro.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/main.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/main.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Main/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Main/main.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Managers/level_manager.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Managers/level_manager.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Managers/mob_spawner.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Managers/mob_spawner.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Player/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Player/player.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/Scenes/Player/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/Scenes/Player/player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WizardLike/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../WizardLike/project.godot" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cYqWLbudaNyZptJDwWvyMzVN0b" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11827f4a-40f1-43d9-996b-b12493106e8f" name="Changes" comment="" />
+      <created>1708298891438</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708298891438</updated>
+    </task>
+    <servers />
+  </component>
+</project>

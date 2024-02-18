@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3s3ur3jffpmk"]
+
+[ext_resource type="Script" path="res://addons/thecollection/components/collectable_component.gd" id="1_v7kb5"]
+[ext_resource type="PackedScene" uid="uid://dgwnh7dfvq71e" path="res://addons/thecollection/components/body_detection_component.tscn" id="2_tu0kc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rag8t"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4ths"]
+radius = 88.0
+
+[node name="CollectableComponent" type="Node2D"]
+script = ExtResource("1_v7kb5")
+
+[node name="BodyDetection" parent="." instance=ExtResource("2_tu0kc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyDetection"]
+shape = SubResource("CircleShape2D_rag8t")
+
+[node name="BodyDetection2" parent="." instance=ExtResource("2_tu0kc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyDetection2"]
+shape = SubResource("CircleShape2D_l4ths")
+
+[connection signal="body_detected" from="BodyDetection" to="." method="_on_body_detection_body_detected"]

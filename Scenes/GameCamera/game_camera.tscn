@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://60ep848ypmds"]
+
+[ext_resource type="Script" path="res://addons/thecollection/components/camera.gd" id="1_sgxnl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80hh4"]
+radius = 0.0
+
+[node name="GameCamera" type="Camera2D" groups=["game_camera"]]
+zoom = Vector2(1.05, 1.05)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+script = ExtResource("1_sgxnl")
+
+[node name="LevelDetector" type="Area2D" parent="."]
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDetector"]
+shape = SubResource("CircleShape2D_80hh4")
+
+[connection signal="area_entered" from="LevelDetector" to="." method="_on_level_detector_area_entered"]

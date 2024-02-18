@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ka3451rofya"]
+
+[ext_resource type="Script" path="res://Scenes/Effects/particles_default.gd" id="1_7ebqu"]
+
+[sub_resource type="Curve" id="Curve_8bgpc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="SwordHitParticles" type="CPUParticles2D"]
+amount = 22
+lifetime = 0.75
+explosiveness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 47.05
+initial_velocity_max = 47.3
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_8bgpc")
+script = ExtResource("1_7ebqu")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqtqey4qq354a"]
+
+[ext_resource type="Script" path="res://Scenes/Effects/particles_default.gd" id="1_3kptd"]
+
+[sub_resource type="Curve" id="Curve_7bco8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="BloodParticles" type="CPUParticles2D"]
+lifetime = 0.5
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 143.18
+gravity = Vector2(0, 40.84)
+initial_velocity_min = 33.65
+initial_velocity_max = 34.15
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_7bco8")
+color = Color(0.945098, 0, 0.141176, 1)
+script = ExtResource("1_3kptd")

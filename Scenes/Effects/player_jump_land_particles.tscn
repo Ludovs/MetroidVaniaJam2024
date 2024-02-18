@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bka5g6h7tbs1o"]
+
+[ext_resource type="Script" path="res://Scenes/Effects/particles_default.gd" id="1_kbf7b"]
+
+[sub_resource type="Curve" id="Curve_e6vss"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="PlayerJumpLandParticles" type="CPUParticles2D"]
+rotation = -1.5708
+amount = 12
+lifetime = 0.35
+explosiveness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(2.945, 1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 41.48
+initial_velocity_max = 41.48
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_e6vss")
+script = ExtResource("1_kbf7b")

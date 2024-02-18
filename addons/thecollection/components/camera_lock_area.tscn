@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://csolcxh2mc30s"]
+
+[ext_resource type="Script" path="res://addons/thecollection/components/camera_lock_area.gd" id="1_ovlld"]
+
+[node name="CameraLockArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 255
+script = ExtResource("1_ovlld")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

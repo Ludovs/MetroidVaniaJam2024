@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm53l84xn8p2l"]
+
+[ext_resource type="Script" path="res://Scenes/GameObjects/LevelArea/level_area.gd" id="1_m3ibm"]
+
+[node name="LevelArea" type="Area2D"]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_m3ibm")

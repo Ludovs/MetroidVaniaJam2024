@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://p8twffvxm5w4"]
+
+[ext_resource type="Script" path="res://Scenes/Components/dart_component.gd" id="1_1icxn"]
+[ext_resource type="PackedScene" uid="uid://dcni8d3h2cwph" path="res://Scenes/GameObjects/Spells/spell_base.tscn" id="2_3bx1w"]
+
+[node name="DartComponent" type="Node"]
+script = ExtResource("1_1icxn")
+spell_scene = ExtResource("2_3bx1w")
+enemy_group = null
+spell_hitbox_collision_layer = 0
+spell_hitbox_collision_mask = 0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsq4j26fotaka"]
+
+[ext_resource type="Script" path="res://addons/thecollection/components/health_component.gd" id="1_pyo2n"]
+
+[node name="HealthComponent" type="Node"]
+script = ExtResource("1_pyo2n")
+
+[connection signal="shield_protect" from="." to="." method="_on_shield_protect"]

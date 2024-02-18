@@ -1,0 +1,163 @@
+[gd_scene load_steps=19 format=3 uid="uid://dl76had5sfl"]
+
+[ext_resource type="Script" path="res://Scenes/GameObjects/Enemies/Moth/enemy_moth.gd" id="1_0wvp0"]
+[ext_resource type="PackedScene" uid="uid://bsq4j26fotaka" path="res://addons/thecollection/components/health_component.tscn" id="1_f4smq"]
+[ext_resource type="Texture2D" uid="uid://dmvx5vv0btrbk" path="res://Assets/Graphics/Enemies.png" id="1_so57k"]
+[ext_resource type="PackedScene" uid="uid://gp2pqudn87w1" path="res://addons/thecollection/components/movement_component.tscn" id="2_qs5xf"]
+[ext_resource type="PackedScene" uid="uid://cwmbomxqydeir" path="res://addons/thecollection/components/hurtbox_component.tscn" id="2_vj3sk"]
+[ext_resource type="PackedScene" uid="uid://sgvfaqcacptk" path="res://addons/thecollection/components/hitbox_component.tscn" id="6_eu2bm"]
+[ext_resource type="Script" path="res://addons/thecollection/classes/Attack.gd" id="7_h7xub"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umviw"]
+radius = 4.47214
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64r33"]
+radius = 1.41421
+
+[sub_resource type="Resource" id="Resource_6ormn"]
+script = ExtResource("7_h7xub")
+attack_damage = 1.0
+attack_kb = 250.0
+attack_position = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lw1k8"]
+radius = 3.0
+
+[sub_resource type="Animation" id="Animation_u6gy4"]
+resource_name = "fly"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fly"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/AnimatedSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.282743]
+}
+
+[sub_resource type="Animation" id="Animation_r0h5w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kbp0d"]
+_data = {
+"RESET": SubResource("Animation_r0h5w"),
+"fly": SubResource("Animation_u6gy4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1d2e"]
+atlas = ExtResource("1_so57k")
+region = Rect2(0, 576, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0iey"]
+atlas = ExtResource("1_so57k")
+region = Rect2(8, 576, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o5cq"]
+atlas = ExtResource("1_so57k")
+region = Rect2(16, 576, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oopj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1d2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0iey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o5cq")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[node name="EnemyMoth" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+platform_floor_layers = 4294967040
+script = ExtResource("1_0wvp0")
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_f4smq")]
+max_health = 3.0
+destroy_on_death = false
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_qs5xf")]
+max_speed = 80
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component", "movement_component") instance=ExtResource("2_vj3sk")]
+collision_layer = 4
+collision_mask = 2
+health_component = NodePath("../HealthComponent")
+movement_component = NodePath("../MovementComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_umviw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_64r33")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("6_eu2bm")]
+collision_layer = 4
+collision_mask = 2
+attack_stats = SubResource("Resource_6ormn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_lw1k8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kbp0d")
+}
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+sprite_frames = SubResource("SpriteFrames_oopj2")
+animation = &"fly"
+
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="body_hit" from="HitboxComponent" to="." method="_on_hitbox_component_body_hit"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgwnh7dfvq71e"]
+
+[ext_resource type="Script" path="res://addons/thecollection/components/body_detection_component.gd" id="1_7x47h"]
+
+[node name="BodyDetection" type="Area2D"]
+collision_layer = 0
+collision_mask = 255
+script = ExtResource("1_7x47h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
