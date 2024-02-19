@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://chxyht72r3ek6"]
+
+[ext_resource type="Script" path="res://Scenes/GameObjects/WindStream/wind_stream.gd" id="1_5fat7"]
+[ext_resource type="PackedScene" uid="uid://dgwnh7dfvq71e" path="res://addons/thecollection/components/body_detection_component.tscn" id="2_j4pnt"]
+
+[sub_resource type="Curve" id="Curve_f0txh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.58427, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsboe"]
+size = Vector2(48, 112)
+
+[node name="WindStream" type="Node2D"]
+script = ExtResource("1_5fat7")
+
+[node name="WindParticles" type="CPUParticles2D" parent="."]
+amount = 32
+emission_shape = 3
+emission_rect_extents = Vector2(24, 1)
+gravity = Vector2(0, -400)
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_curve = SubResource("Curve_f0txh")
+
+[node name="BodyDetection" parent="." instance=ExtResource("2_j4pnt")]
+body_group = "player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyDetection"]
+position = Vector2(0, -56)
+shape = SubResource("RectangleShape2D_lsboe")

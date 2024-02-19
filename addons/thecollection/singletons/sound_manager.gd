@@ -12,7 +12,7 @@ func play_sound(sound_name: String, volume_db: float = 0, extention: String = ".
 	for audio_player in audio_players:
 		if !audio_player.playing:
 			audio_player.set_bus("SFX")
-			audio_player.stream = load("res://Asset/Audio/Sfx/"+sound_name+extention)
+			audio_player.stream = load("res://Assets/Audio/Sfx/"+sound_name+extention)
 			audio_player.volume_db = volume_db
 			audio_player.play()
 			break
@@ -21,18 +21,18 @@ func play_random_sound(sound_names: Array, volume_db: float = 0, extention: Stri
 	for audio_player in audio_players:
 		if !audio_player.playing:
 			audio_player.set_bus("SFX")
-			audio_player.stream = load("res://Asset/Audio/Sfx/"+choose(sound_names)+extention)
+			audio_player.stream = load("res://Assets/Audio/Sfx/"+choose(sound_names)+extention)
 			audio_player.volume_db = volume_db
 			audio_player.play()
 			break
 
 func play_track(track_name: String, volume_db: float = 0, extention: String = ".wav"):
 	for audio_player in audio_players:
-		if audio_player.stream == load("res://Asset/Audio/Music/"+track_name+extention):
+		if audio_player.stream == load("res://Assets/Audio/Music/"+track_name+extention):
 			return
 		if !audio_player.playing:
 			audio_player.set_bus("Music")
-			audio_player.stream = load("res://Asset/Audio/Music/"+track_name+extention)
+			audio_player.stream = load("res://Assets/Audio/Music/"+track_name+extention)
 			audio_player.volume_db = volume_db
 			audio_player.play()
 			break
@@ -44,7 +44,7 @@ func stop_track():
 
 func stop_specific_track(track_name: String, extention: String = ".wav"):
 	for audio_player in audio_players:
-		if audio_player.stream == load("res://Asset/Audio/Music/"+track_name+extention):
+		if audio_player.stream == load("res://Assets/Audio/Music/"+track_name+extention):
 			audio_player.stop()
 
 func set_track_volume(volume: int):
@@ -54,7 +54,7 @@ func set_track_volume(volume: int):
 
 func is_track_playing(track_name: String, extention: String = ".wav"):
 	for audio_player in audio_players:
-		if audio_player.stream == load("res://Asset/Audio/Music/"+track_name+extention):
+		if audio_player.stream == load("res://Assets/Audio/Music/"+track_name+extention):
 			return true
 	return false
 
@@ -63,7 +63,7 @@ func replace_track(track_name: String, volume: int = 0, extention: String = ".wa
 		if audio_player.get_bus() == "Music":
 			audio_player.stop()
 		audio_player.set_bus("Music")
-		audio_player.stream = load("res://Asset/Audio/Music/"+track_name+extention)
+		audio_player.stream = load("res://Assets/Audio/Music/"+track_name+extention)
 		audio_player.volume_db = volume
 		audio_player.play()
 		return

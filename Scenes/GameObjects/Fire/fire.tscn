@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0rb7ygaxaru3"]
+
+[ext_resource type="Texture2D" uid="uid://sgpgvyxn1wr7" path="res://Assets/Graphics/Underground.png" id="1_3r2sj"]
+[ext_resource type="Script" path="res://Scenes/GameObjects/Fire/fire.gd" id="1_5oawe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl065"]
+atlas = ExtResource("1_3r2sj")
+region = Rect2(176, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr1pj"]
+atlas = ExtResource("1_3r2sj")
+region = Rect2(192, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mtgk"]
+atlas = ExtResource("1_3r2sj")
+region = Rect2(176, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rm3f"]
+atlas = ExtResource("1_3r2sj")
+region = Rect2(192, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nye4"]
+atlas = ExtResource("1_3r2sj")
+region = Rect2(176, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uckti"]
+atlas = ExtResource("1_3r2sj")
+region = Rect2(192, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sky4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl065")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr1pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mtgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rm3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nye4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uckti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Curve" id="Curve_e0ybe"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.505618, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Fire" type="Node2D"]
+script = ExtResource("1_5oawe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sky4w")
+frame_progress = 0.322822
+
+[node name="FireParticles" type="CPUParticles2D" parent="."]
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_max = 30.85
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_e0ybe")
+color = Color(0.929412, 0.47451, 0.160784, 1)

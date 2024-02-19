@@ -37,6 +37,9 @@ func new_target(node, cam_zoom: Vector2):
 
 
 func _on_level_detector_area_entered(area):
+	get_tree().paused = true
+	await get_tree().create_timer(0.2).timeout
+	get_tree().paused = false
 	if area is LevelArea:
 		area.player_has_entered()
 		var collision_shape = area.get_node("CollisionShape2D")

@@ -1,6 +1,7 @@
 extends CharacterBody2D
+class_name Player
 
-@export var abilities = {"Sword": true, "WallJump": true}
+@export var abilities = {"Sword": true, "WallJump": true, "Dash": true, "Gliding": true}
 
 @onready var visuals = $Visuals
 @onready var animated_sprite = $Visuals/AnimatedSprite2D
@@ -13,12 +14,13 @@ extends CharacterBody2D
 @onready var right_wall_check = $WallChecks/RightWallCheck
 @onready var left_wall_check = $WallChecks/LeftWallCheck
 @onready var wall_checks = $WallChecks
+@onready var glider = $Glider
 
 
 #Components ---------------------------------------------------------------------------------------------
 @onready var state_machine : StateMachineComponent = $StateMachineComponent
 
-var movement_speed = 110
+var movement_speed = 100
 var movement_accel = 10
 var movement_frict = 20
 
@@ -30,7 +32,20 @@ var jump_time_to_descent : float = 0.35
 var wall_jump_velocity = 350
 var wall_slide_max_velocity = 25
 
+var dash_velocity = 250
+var dashing_time = 0.25
+
+var gliding_max_velocity = 25
+var gliding_power = 100
+var gliding_decay = .5
+
 var is_grounded : bool = false
+var is_dashing = false
+var is_gliding = false
+
+var can_dash = true
+
+var facing_direction = 1 #1 if right, -1 if left
 
 @onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -69,6 +84,44 @@ func _physics_process(delta):
 	move_and_slide()
 	handle_wall_jump()
 	handle_wall_sliding()
+	handle_dash()
+	handle_gliding()
+
+func handle_gliding():
+	var tween = create_tween()
+	if !abilities["Gliding"]:
+		tween.tween_property(glider, "scale", Vector2(0,0), 0.05)
+		return
+	if !is_gliding or gliding_power <= 0:
+		tween.tween_property(glider, "scale", Vector2(0,0), 0.25)
+
+	if is_grounded:
+		gliding_power = 100
+		is_gliding = false
+		return
+	glider.get_node("AnimationPlayer").play("glide")
+	is_gliding = Input.is_action_pressed("glide")
+	if is_gliding && gliding_power > 0 && !is_grounded:
+		gliding_power -= gliding_decay if gliding_decay > 0 else 0
+		tween.tween_property(glider, "scale", Vector2(1,1), 0.05)
+		if velocity.y > gliding_max_velocity:
+			velocity.y = gliding_max_velocity
+func handle_dash():
+	if !abilities["Dash"]:
+		return
+	if is_grounded or is_wall_sliding:
+		can_dash = true
+	if is_dashing:
+		velocity.x = dash_velocity*get_input_direction()
+		velocity.y = 0 if Input.get_axis("up", "down") > -1 else -dash_velocity/4
+	if !can_dash:
+		return
+	if Input.is_action_just_pressed("dash"):
+		is_dashing = true
+		can_dash = false
+		await get_tree().create_timer(dashing_time).timeout
+		is_dashing = false
+	
 
 func handle_attack():
 	if !abilities["Sword"]:
@@ -88,7 +141,10 @@ func handle_attack():
 	if sword_hit_raycast.is_colliding():
 		ParticleManager.emit_particles("sword_hit_particles", sword_hit_raycast.get_collision_point())
 	$Sword/SwordEffect.emitting = true
-	velocity.x += 200*(1 if get_input_direction() > 0 else -1)
+	if facing_direction > 0 && Input.get_axis("up", "down") == 0:
+		velocity.x += 200
+	if facing_direction < 0 && Input.get_axis("up", "down") == 0:
+		velocity.x -= 200
 	camera.do_shake(5,1)
 	sword_animation_player.play("swing")
 
@@ -103,7 +159,7 @@ func handle_wall_jump():
 	
 	if Input.is_action_just_pressed("jump"):
 		if is_wall_sliding:
-			print("walljump")
+			ParticleManager.emit_particles("player_jump_land_particles", global_position-Vector2(0,-5))
 			velocity.y = -wall_jump_velocity
 			velocity.x = (wall_jump_velocity/1.5)*-wall_direction
 	
@@ -164,13 +220,16 @@ func handle_particles():
 		land_count = false
 	
 	$WallParticles.emitting = is_wall_sliding
-
+	$Visuals/DashingParticles.emitting = is_dashing
+	
 func handle_sprite_flipping():
 	if velocity.x == 0:
 		return
 	if velocity.x > 0:
+		facing_direction = 1
 		visuals.scale = Vector2(1,1)
 	if velocity.x < 0:
+		facing_direction = -1
 		visuals.scale = Vector2(-1,1)
 
 func add_velocity(factor : float = 1.5):

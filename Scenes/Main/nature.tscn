@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmgaqxnsyen8g"]
+[gd_scene load_steps=12 format=3 uid="uid://bmgaqxnsyen8g"]
 
 [ext_resource type="TileSet" uid="uid://b0knve3r0w2pm" path="res://Resources/main_tileset.tres" id="1_b51ib"]
 [ext_resource type="PackedScene" uid="uid://cqu2rf5l6a35i" path="res://Scenes/Player/player.tscn" id="3_xytrq"]
 [ext_resource type="PackedScene" uid="uid://60ep848ypmds" path="res://Scenes/GameCamera/game_camera.tscn" id="4_ktvlv"]
 [ext_resource type="PackedScene" uid="uid://cm53l84xn8p2l" path="res://Scenes/GameObjects/LevelArea/level_area.tscn" id="5_7s3yq"]
+[ext_resource type="PackedScene" uid="uid://chxyht72r3ek6" path="res://Scenes/GameObjects/WindStream/wind_stream.tscn" id="5_n66b8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f37tj"]
 size = Vector2(320, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8q6cn"]
-size = Vector2(384, 178)
+size = Vector2(384, 370)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb2c3"]
 size = Vector2(320, 210)
@@ -39,7 +40,7 @@ layer_2/z_index = -5
 layer_2/tile_data = PackedInt32Array(1245201, 1, 2, 1179668, 65537, 2, 1179670, 262145, 2, 1179671, 131073, 2, 1179672, 65537, 2, 1179680, 1, 2, 1179684, 196609, 2, 1179685, 1, 2, 1179686, 262145, 2, 1114115, 262145, 2, 1114114, 196609, 2, 1114113, 196609, 2, 1114118, 65537, 2, 1114119, 262145, 2, 917556, 262145, 2, 917555, 196609, 2, 1179691, 262145, 2, 1179692, 131073, 2, 1048641, 262145, 2, 1048639, 65537, 2, 917562, 262145, 2, 917563, 196609, 2, 1114185, 1, 2, 1114186, 131073, 2, 1114190, 196609, 2, 1114191, 196609, 2, 1114192, 196609, 2, 1114195, 262145, 2, 1114204, 131073, 2, 1114203, 65537, 2, 1114202, 196609, 2, 1114201, 65537, 2, 1114200, 262145, 2, 1114197, 1, 2, 1114198, 1, 2, 1114199, 1, 2, 589924, 131073, 2, 589925, 131073, 2, 589926, 262145, 2, 589927, 262145, 2, 589933, 65537, 2, 852084, 262145, 2, 852085, 65537, 2, 786544, 262145, 2, 917627, 262145, 2, 917628, 1, 2, 917629, 131073, 2, 917623, 65537, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_xytrq")]
-position = Vector2(760, 120)
+position = Vector2(496, 88)
 
 [node name="GameCamera" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("4_ktvlv")]
 editor_draw_limits = true
@@ -59,7 +60,7 @@ shape = SubResource("RectangleShape2D_f37tj")
 position = Vector2(480, 88)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/LevelArea2"]
-position = Vector2(32, 1)
+position = Vector2(32, -95)
 shape = SubResource("RectangleShape2D_8q6cn")
 
 [node name="LevelArea3" parent="Levels" instance=ExtResource("5_7s3yq")]
@@ -88,3 +89,6 @@ position = Vector2(1424, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/LevelArea6"]
 shape = SubResource("RectangleShape2D_tnxk5")
+
+[node name="WindStream" parent="." instance=ExtResource("5_n66b8")]
+position = Vector2(640, 144)
