@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ParticleManager="*res://addons/thecollection/singletons/particle_manager.tscn"
 SoundManager="*res://addons/thecollection/singletons/sound_manager.tscn"
+Globals="*res://Scenes/Autoload/globals.tscn"
 
 [display]
 

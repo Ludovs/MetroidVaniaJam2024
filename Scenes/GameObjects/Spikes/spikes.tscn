@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmgph7x3cmd0v"]
+
+[ext_resource type="Script" path="res://Scenes/GameObjects/Spikes/spikes.gd" id="1_l1jqu"]
+[ext_resource type="Texture2D" uid="uid://dbq8jk7j4vss" path="res://Assets/Graphics/Interactables.png" id="2_wdnc6"]
+[ext_resource type="PackedScene" uid="uid://sgvfaqcacptk" path="res://addons/thecollection/components/hitbox_component.tscn" id="3_f241y"]
+[ext_resource type="Script" path="res://addons/thecollection/classes/Attack.gd" id="4_ge53a"]
+
+[sub_resource type="Resource" id="Resource_5o0fy"]
+script = ExtResource("4_ge53a")
+attack_damage = 1.0
+attack_kb = 200.0
+attack_position = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipvfi"]
+size = Vector2(8, 5)
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_l1jqu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 1.55)
+texture = ExtResource("2_wdnc6")
+region_enabled = true
+region_rect = Rect2(16, 203, 9, 5)
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_f241y")]
+collision_layer = 4
+collision_mask = 2
+attack_stats = SubResource("Resource_5o0fy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ipvfi")
+
+[connection signal="body_hit" from="HitboxComponent" to="." method="_on_hitbox_component_body_hit"]

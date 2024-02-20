@@ -380,6 +380,21 @@ height = 4.44444
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_ohw45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GliderSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_b5a7y"]
 resource_name = "glide"
 length = 2.0
@@ -397,21 +412,6 @@ tracks/0/keys = {
 "values": [0.0, -0.15708, 0.0, 0.15708, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_ohw45"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GliderSprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l1q02"]
 _data = {
 "RESET": SubResource("Animation_ohw45"),
@@ -422,6 +422,7 @@ _data = {
 scale = Vector2(1.35, 1.35)
 collision_layer = 2
 collision_mask = 5
+platform_floor_layers = 4294967041
 script = ExtResource("1_06y8k")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_4jc1m")]

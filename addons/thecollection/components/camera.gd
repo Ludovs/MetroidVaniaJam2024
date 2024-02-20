@@ -4,8 +4,12 @@ class_name GameCamera
 @export var target_node: Node2D
 @export var camera_enabled: bool = true
 
+@onready var player = get_tree().get_first_node_in_group("player")
+
 var shake_amount = 0
 var shake_decay = 0
+
+var default_zoom = Vector2(1.05, 1.05)
 
 func _ready():
 	add_to_group("game_camera")
@@ -28,7 +32,7 @@ func do_shake(shake_value, sk_decay = 0.25):
 	shake_decay = sk_decay
 
 var last_target
-func new_target(node, cam_zoom: Vector2):
+func new_target(node: Node2D, cam_zoom: Vector2):
 	if !node:
 		return
 	last_target = target_node
@@ -37,10 +41,8 @@ func new_target(node, cam_zoom: Vector2):
 
 
 func _on_level_detector_area_entered(area):
-	get_tree().paused = true
-	await get_tree().create_timer(0.2).timeout
-	get_tree().paused = false
 	if area is LevelArea:
+		Globals.player_respawn_position = player.global_position
 		area.player_has_entered()
 		var collision_shape = area.get_node("CollisionShape2D")
 		var size = collision_shape.shape.extents*2

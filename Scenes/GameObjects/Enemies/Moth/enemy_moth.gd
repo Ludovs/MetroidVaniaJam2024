@@ -4,11 +4,13 @@ extends CharacterBody2D
 @onready var visuals = $Visuals
 @onready var animation_player = $AnimationPlayer
 
+@export var detect_distance = 200
+
 func _ready():
 	animation_player.play("fly")
 
 func _process(delta):
-	movement_component.accelerate_to_closest_body("player")
+	movement_component.accelerate_to_closest_body("player", detect_distance)
 	movement_component.move(self)
 	if velocity.x > 0:
 		visuals.scale.x = 1

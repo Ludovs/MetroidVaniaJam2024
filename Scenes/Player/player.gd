@@ -46,6 +46,7 @@ var is_gliding = false
 var can_dash = true
 
 var facing_direction = 1 #1 if right, -1 if left
+var enabled = true
 
 @onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -55,6 +56,12 @@ func _process(delta):
 	handle_sprite_flipping()
 
 func _physics_process(delta):
+	handle_gravity(delta)
+	move_and_slide()
+	if !enabled:
+		velocity.x = 0
+		animation_player.play("idle")
+		return
 	match state_machine.current_state:
 		"idle":
 			handle_jump()
@@ -79,9 +86,8 @@ func _physics_process(delta):
 			handle_attack()
 			animation_player.play("attack")
 			state_machine.change_state("run")
-	handle_gravity(delta)
+	
 	handle_particles()
-	move_and_slide()
 	handle_wall_jump()
 	handle_wall_sliding()
 	handle_dash()
@@ -115,6 +121,8 @@ func handle_dash():
 		velocity.x = dash_velocity*get_input_direction()
 		velocity.y = 0 if Input.get_axis("up", "down") > -1 else -dash_velocity/4
 	if !can_dash:
+		return
+	if get_input_direction() == 0 && Input.get_axis("up", "down") == 0:
 		return
 	if Input.is_action_just_pressed("dash"):
 		is_dashing = true
@@ -267,3 +275,4 @@ func _on_hitbox_component_body_hit():
 
 func _on_health_component_damaged():
 	camera.do_shake(10,.4)
+	Globals.do_frame_freeze()
